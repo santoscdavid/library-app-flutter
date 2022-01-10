@@ -4,7 +4,7 @@ class Editora {
   final dynamic cidade;
 
   Editora({
-    required this.id,
+    this.id,
     required this.nome,
     required this.cidade,
   });

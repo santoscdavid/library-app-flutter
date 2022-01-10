@@ -15,7 +15,9 @@ class EditoraProvider with ChangeNotifier {
 
     for (var editora in data) {
       allEditoras.add(Editora(
-          id: editora['id'], nome: editora['nome'], cidade: editora['cidade']));
+          id: editora['id'].toString(),
+          nome: editora['nome'],
+          cidade: editora['cidade']));
     }
     return allEditoras;
   }
