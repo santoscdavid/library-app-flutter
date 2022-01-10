@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:livraria_mobile/routes/form_routes.dart';
+import 'package:livraria_mobile/routes/routes.dart';
 
 class TitleEditora extends StatelessWidget {
   const TitleEditora({Key? key}) : super(key: key);
@@ -39,7 +41,9 @@ class TitleEditora extends StatelessWidget {
                 IconButton(
                   color: Colors.white,
                   icon: const Icon(Icons.add_circle_outlined),
-                  onPressed: () => {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(AppRoutes.EDITORA_FORM);
+                  },
                 ),
               ],
             ),

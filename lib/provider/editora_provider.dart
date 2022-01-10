@@ -21,4 +21,18 @@ class EditoraProvider with ChangeNotifier {
     }
     return allEditoras;
   }
+
+  Future<void> save(Editora editora) async {
+    // ignore: unnecessary_null_comparison
+    if (editora != null) {
+      await http.post(Uri.parse(_baseURL + '/Editora'),
+          headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          },
+          body: jsonEncode({'nome': editora.nome, 'cidade': editora.cidade}),
+          encoding: Encoding.getByName("utf-8"));
+      notifyListeners();
+    }
+  }
 }
